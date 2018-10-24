@@ -1,0 +1,385 @@
+body,ul,li,p,h5{
+  padding:0;
+  margin:0;
+}
+body{
+  background:#000;
+}
+/* 动态边框效果 */
+.d-border{
+  transition:all 0.3s ease-in;
+  background:linear-gradient(0,#fff,#fff) no-repeat,linear-gradient(0,#fff,#fff) no-repeat,linear-gradient(0,#fff,#fff) no-repeat,linear-gradient(0,#fff,#fff) no-repeat;
+  background-size:0 1px,1px 0,0 1px,1px 0;
+  background-position:left top,right top,right bottom,left bottom;
+}
+.d-border:hover{
+  background-size:100% 1px,1px 100%,100% 1px,1px 100%;
+}
+/* 导航栏动画 */
+@keyframes opa{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;  
+  }
+}
+/* 导航栏 */
+nav{
+  width:1250px;
+  height:80px;
+  margin:0 auto;
+  position: relative;
+  z-index:3;
+}
+.logo{
+  position: absolute;
+  left:0px;
+  top:3px;
+}
+ul,li{
+  list-style: none;
+}
+nav>ul{
+  padding-top:15px;
+  margin-left:210px;
+  float:left;
+}
+nav>ul>li{
+  text-align: center;
+  margin:0 2px;
+  float:left;
+}
+a{
+  text-decoration: none;
+}
+.font_cn{
+  color:#fafafa;
+  font-size: 18px;
+  display: block;
+  padding:10px 20px;
+}
+.font_en{
+  color:#838383;
+  font-size: 10px;
+  font-family: 'Tahoma'
+}
+span.font_en{
+  display: block;
+}
+/* 导航栏下拉菜单 */
+.nav_item{
+  display:none;
+  background:rgba(0,0,0,.8);
+  padding:5px;
+  position:absolute;
+  top:73px;
+}
+.nav_item_1{
+  left:212px;
+}
+.nav_item a{
+  display:block;
+  color:#838383;
+  font-size:13px;
+  text-align:center;
+  border-radius:3px;
+  transition: all .3s;
+}
+.nav_item a:hover{
+  background:#f2f2f2;
+  color:#c89b3c;
+}
+.nav_item_1 a{
+  padding:5px 5.5px;
+}
+.nav_li_1:hover .nav_item_1{
+  display:block;
+  animation:opa 0.5s linear;
+}
+.nav_item_2 a{
+  padding:5px 23.5px;
+}
+.nav_li_2:hover .nav_item_2{
+  display:block;
+  animation:opa 0.5s linear;
+}
+.nav_item_3 a{
+  padding:5px 18.5px;
+}
+.nav_li_3:hover .nav_item_3{
+  display:block;
+  animation:opa 0.5s linear;
+}
+.nav_item_4 a{
+  padding:5px 5.5px;
+}
+.nav_li_4:hover .nav_item_4{
+  display:block;
+  animation:opa 0.5s linear;
+}
+.nav_item_5 a{
+  padding:5px 5.5px;
+}
+.nav_li_5:hover .nav_item_5{
+  display:block;
+  animation:opa 0.5s linear;
+}
+/* 导航栏右侧搜索登录区 */
+.search{
+  display: flex;
+  color:#fafafa;
+  justify-content: space-around;
+  width:420px;
+  margin-top:10px;
+  position: relative;
+}
+nav::before{
+  display: table;
+  content:"";
+}
+.search_span,.search_a{
+  margin-top:10px;
+  cursor:pointer;
+}
+.search_img{
+  display:inline-block;
+  position: relative;
+  z-index: 4;
+}
+.search_text{
+  display:flex;
+  position: relative;
+  z-index:3;
+}
+.search_text_login{
+  margin:10px 0 0 10px;
+}
+.search_text:hover .login{
+  transform:translateY(132px);
+  opacity:1;
+}
+.search_text_a{
+  color:#DFB257;
+  text-decoration:underline;
+  margin-right:15px;
+}
+.search_text_p2{
+  color:#999;
+  font-size: 12px;
+  margin-top:5px;
+}
+/* 登录隐藏框体 */
+.login{
+  display:block;
+  background:rgba(27,27,27,0.9);
+  width:320px;
+  padding:100px 0 0;
+  position:absolute;
+  left:-5px;
+  top:-150px;
+  z-index:-1;
+  transition:all 0.5s;
+  opacity:0;
+}
+.login p{
+  padding:0 20px 10px;
+}
+.login_p1{
+  color:#868686;
+  font-size:14px;
+}
+.login_p2{
+  color:#999;
+  font-size:12px;
+  text-align:center;
+}
+.login_a{
+  display:block;
+  width:100%;
+  height:35px;
+  text-align:center;
+  line-height:35px;
+  color:#fff;
+  background:#000;
+  font-size:14px;
+}
+/* 搜索栏 */
+.input_box{
+  position:absolute;
+  left:800px;
+  top:25px;
+  display:none;
+}
+.input_box_top{
+  background:#fff;
+  width:450px;
+  height:35px;
+  background-image:url(../img/icon/spr-18.png);
+  background-position:left 2px;
+  background-repeat:no-repeat;
+  text-align:center;
+  position:relative;
+}
+.input_input{
+  width:375px;
+  height:22px;
+  position:absolute;
+  left:35px;
+  top:7px;
+  font-size:16px;
+  padding:0;
+  border:0;
+}
+.input_span{
+  font-size:12px;
+  color:#838383;
+  display:block;
+  position:absolute;
+  right:50px;
+  top:10px;
+}
+.input_box_close{
+  position:absolute;
+  right:2px;
+  top:0px;
+}
+.input_item{
+  background:#fff;
+  margin-top:10px;
+  position: relative;
+  z-index: 3;
+  padding:20px 10px 20px;
+}
+.input_h5{
+ color:#a4a4a4;
+ margin:0 0 10px 30px;
+}
+.input_a{
+  display:block;
+  color:#696969;
+  font-size:14px;
+  height:30px;
+  line-height:30px;
+  padding-left:70px;
+  transition:.3s;
+}
+.input_a:hover{
+  background:#f2f2f2;
+  color:#c89b3c;
+}
+/* 登录页面 */
+.login_page_bg{
+  background:rgba(230,245,255,.7);
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:6;
+  display:none;
+}
+.login_page{
+  background:#fff;
+  width:630px;
+  height:370px;
+  margin:15% auto;
+  position:relative;
+  border:2px solid #f2f2f2;
+}
+.login_close{
+  display:block;
+  width:40px;
+  height:20px;
+  line-height:20px;
+  border-left:1px solid #999;
+  text-align:center;
+  position:absolute;
+  top:0;
+  right:0;
+  cursor:pointer;
+}
+.login_close:hover{
+  background-image:linear-gradient(to bottom,red,white);
+  color:white;
+}
+.login_page_p1,.login_page_p2{
+  text-align:center;
+}
+.login_page_p1{
+  font-size:20px;
+  color:#333;
+  margin-top:30px;
+  margin-bottom:15px;
+}
+.login_page_p2{
+  color:#666;
+}
+.login_qq{
+  color:#1293ed;
+}
+.login_img{
+  position:absolute;
+  top:150px;
+  left:249px;
+  transition:.5s;
+}
+.login_tips{
+  position:absolute;
+  left:320px;
+  display:none;
+}
+.login_page_span:hover .login_img{
+  left:183px;
+}
+.login_down{
+  position:absolute;
+  bottom:5px;
+  right:5px;
+  font-size:12px;
+  color:#999;
+}
+.login_page_a{
+  display:inline-block;
+  font-size:12px;
+  color:#666;
+}
+#login_pwd{
+  display:none;
+}
+.login_form{
+  position: relative;
+  top:20px;
+}
+.login_input,.login_btn{
+  display:block;
+  margin:20px auto;
+}
+.login_input{
+  width:260px;
+  height:36px;
+  border-radius:3px;
+  border:1px solid #ccc;
+  padding-left:10px;
+}
+.login_btn{
+  border:0;
+  color:white;
+  font-size:17px;
+  width:272px;
+  height:40px;
+  line-height:35px;
+  background:#1293ed;
+}
+#c{
+  position: absolute;
+  top:-70px;
+  left:28px;
+  opacity:0;
+  z-index:-1;
+  transition:all 0.5s;
+}
+.search_a:hover #c{
+  opacity:1;
+  transform:translateY(150px);
+}

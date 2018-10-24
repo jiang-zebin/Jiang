@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>资料页</title>
+  <link rel="stylesheet" href="css/hero.css">
+  <script src="js/vue.js"></script>
+  <script src="js/axios.min.js"></script>
+  <script></script>
+</head>
+<body>
+  <nav></nav>
+  <!-- 页面大图 -->
+  <div class="ver">
+    <a href="#" class="ver_btn big_btn">查看详情</a>
+    <p class="ver_p">当前游戏版本:
+      <span class="ver_span">Ver 8.18</span>
+      <a href="#" class="ver_btn small_btn">版本详情</a>
+    </p>
+  </div>
+  <div class="section">
+    <div class="list_head">
+      <img src="img/icon/spr-42.png">&nbsp;
+      <a href="index.html">英雄联盟首页</a>&nbsp;&nbsp;
+      <img src="img/icon/spr-43.png">&nbsp;&nbsp;
+      <a href="#">游戏资料</a>&nbsp;&nbsp;
+      <img src="img/icon/spr-43.png">&nbsp;&nbsp;
+      <span>英雄</span>
+    </div>
+    <div class="list_box">
+      <div class="list_tab">
+        <ul class="list_page">
+          <li class="page1">
+            <a href="#" class="active">英雄</a>
+          </li>
+          <li class="page2">
+            <a href="#">物品</a>
+          </li>
+          <li class="page3">
+            <a href="#">召唤师技能</a>
+          </li>
+          <li class="page4">
+            <a href="#">符文</a>
+          </li>
+        </ul>
+      </div>
+      <div id="hero">
+        <ul class="type_list">
+          <li data-toggle="type" v-for="item in typelist">
+            <input type="radio" v-model="Type" name="heroType" :value="item.type" :id="item.id" @change="getList()"><label :for="item.id">{{item.label}}</label>
+          </li>
+        </ul>
+        <div class="name_search">
+          <input type="text" placeholder="请输入您要搜索的英雄名" v-model="heroName" @keyup="search()">
+        </div>
+        <ul class="hero_list">
+          <li v-for="p in res" :title="p.hname">
+            <a href="#">
+              <img :src="p.hero_avatar"><br>
+              <span>{{p.hname}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/ajax.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+</html>

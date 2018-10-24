@@ -1,0 +1,170 @@
+<!--顶部导航栏-->
+<nav class="nav">
+    <!--logo-->
+    <a href="index.html" class="logo">
+        <img src="img/logo.png">
+    </a>
+    <!-- 导航列表 -->
+    <ul class="nav_ul">
+        <li class="d-border nav_li_1">
+            <a href="hero.html" class="font_cn">
+                游戏资料
+                <span class="font_en">GAME INFO</span>
+            </a>
+            <!-- 导航下拉菜单 -->
+            <div class="nav_item nav_item_1">
+                <a href="#">新手指引</a>
+                <a href="hero.html">资料库</a>
+                <a href="#">攻略中心</a>
+                <a href="#">开发者基地</a>
+                <a href="#">海克斯战利品库</a>
+                <a href="#">武器大师竞技场</a>
+                <a href="#">宇宙官网</a>
+            </div>
+        </li>
+        <li class="d-border nav_li_2">
+            <a href="#" class="font_cn">
+                商城/合作
+                <span class="font_en">STORE</span>
+            </a>
+            <!-- 导航下拉菜单 -->
+            <div class="nav_item nav_item_2">
+                <a href="#">点券充值</a>
+                <a href="#">道聚城</a>
+                <a href="#">周边商城</a>
+                <a href="#">LOL桌游</a>
+                <a href="#">LOL信用卡</a>
+                <a href="#">网吧特权</a>
+            </div>
+        </li>
+        <li class="d-border nav_li_3">
+            <a href="#" class="font_cn">
+                用户互动
+                <span class="font_en">COMMUNITY</span>
+            </a>
+            <!-- 导航下拉菜单 -->
+            <div class="nav_item nav_item_3">
+                <a href="#">在线客服</a>
+                <a href="#">视频中心</a>
+                <a href="#">官方论坛</a>
+                <a href="#">官方微信</a>
+                <a href="#">官方微博</a>
+                <a href="#">玩家创作馆</a>
+                <a href="#">玩家服务</a>
+            </div>
+        </li>
+        <li class="d-border nav_li_4">
+            <a href="#" class="font_cn">
+                赛事中心
+                <span class="font_en">EVENTS</span>
+            </a>
+            <!-- 导航下拉菜单 -->
+            <div class="nav_item nav_item_4">
+                <a href="#">LOL职业联赛</a>
+                <a href="#">洲际系列赛</a>
+                <a href="#">LDL发展联赛</a>
+                <a href="#">集中冠军赛</a>
+                <a href="#">德玛西亚杯</a>
+                <a href="#">全球高校冠军杯</a>
+                <a href="#">城市英雄争霸赛</a>
+            </div>
+        </li>
+        <li class="d-border nav_li_5">
+            <a href="#" class="font_cn">
+                自助系统
+                <span class="font_en">SYSTEM</span>
+            </a>
+            <!-- 导航下拉菜单 -->
+            <div class="nav_item nav_item_5">
+                <a href="#">转区系统</a>
+                <a href="#">封号查询</a>
+                <a href="#">体验服申请</a>
+                <a href="#">回放系统</a>
+                <a href="#">服务器状态查询</a>
+                <a href="#">秩序殿堂</a>
+                <a href="#">峡谷之巅</a>
+            </div>
+        </li>
+    </ul>
+    <!--搜索登录-->
+    <div class="search" id="search">
+        <a href="javascript:close_open('search','in1')" class="search_span">
+            <img src="img/icon/search.png">
+        </a>
+        <a href="#" class="search_a">
+            <img src="img/icon/phone.png">
+            <canvas id="c" width="150" height="160"></canvas>
+        </a>
+        <div class="search_text">
+            <img src="img/icon/default_2.png" class="search_img">
+            <div class="search_text_login" id="user_info">
+                <p class="search_text_p1">亲爱的召唤师，欢迎
+                    <a href="javascript:open('login_page')" class="search_text_a">登录</a>
+                </p>
+                <p class="search_text_p2">登录后查看自己的战绩、资产、声望值等</p>
+                <!-- <p class="search_text_p1">欢迎召唤师
+                    <a href="#" class="search_text_a">xxx</a>
+                    <a href="#" class="search_text_a">注销</a>
+                </p>
+                <p class="search_text_p2">查看自己的战绩、资产、声望值等</p> -->
+            </div>
+            <!-- 欢迎登陆详情框 -->
+            <div class="login">
+                <p class="login_p1">登录并且绑定大区后才可查看您的具体信息哦~（包括战绩、资产、声望值等）</p>
+                <p class="login_p2">官网个人信息显示略有延迟，请以游戏内数据为准</p>
+                <a href="#" class="login_a">进入个人中心</a>
+            </div>
+        </div>
+    </div>
+    <!-- 搜索框 -->
+    <div class="input_box" id="in1">
+        <div class="input_box_top">
+            <input class="input_input" type="text" placeholder="搜索 lol.qq.com" onfocus="close1(span1)" onblur="open1(span1)">
+            <span class="input_span" id="span1">按下回车键进行搜索</span>
+            <a href="javascript:close_open_flex('in1','search')" class="input_box_close">
+                <img src="img/icon/spr-19.png">
+            </a>
+        </div>
+        <div class="input_item">
+            <h5 class="input_h5">快速链接</h5>
+            <a href="#" class="input_a">全球总决赛</a>
+            <a href="#" class="input_a">新皮肤</a>
+            <a href="#" class="input_a">SKT</a>
+            <a href="#" class="input_a">季前赛</a>
+            <a href="#" class="input_a">奥恩</a>
+        </div>
+    </div>
+    <!-- 登录界面 -->
+    <div class="login_page_bg" id="login_page">
+        <div class="login_page">
+            <a href="javascript:close('login_page')" class="login_close">&times;</a>
+            <div id="login_phone">
+                <p class="login_page_p1">快速安全登录</p>
+                <p class="login_page_p2">请使用<a href="#" class="login_qq">QQ手机版</a>扫描二维码，<br>安全登录，防止盗号。</p>
+                <span class="login_page_span" onmouseover="login_tips()" onmouseout="login_tips_none()">
+                    <img src="img/index/login_img.png" class="login_img">
+                    <img src="img/index/login_tips.png" class="login_tips" id="login_tips">
+                </span>
+                <div class="login_down">
+                    <a href="javascript:close_open('login_phone','login_pwd')" class="login_page_a">账号密码登录</a> |
+                    <a href="register.html" class="login_page_a">注册新账号</a> |
+                    <a href="#" class="login_page_a">意见反馈</a>
+                </div>
+            </div>
+            <div id="login_pwd">
+                <p class="login_page_p1">帐号密码登录</p>
+                <p class="login_page_p2">推荐使用<a href="javascript:close_open('login_pwd','login_phone')" class="login_qq">快速安全登录</a>，防止盗号。</p>
+                <form action="/login" method="post" class="login_form">
+                    <input type="text" placeholder="支持QQ号/邮箱/手机号登录" class="login_input" name="uname">
+                    <input type="password" placeholder="密码" class="login_input" name="upwd">
+                    <input type="submit" value="登录" class="login_btn">
+                </form>
+                <div class="login_down">
+                    <a href="#" class="login_page_a">忘记密码?</a> |
+                    <a href="#" class="login_page_a">注册新账号</a> |
+                    <a href="#" class="login_page_a">意见反馈</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

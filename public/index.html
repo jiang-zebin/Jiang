@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <title>首页</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div class="video_div" id="video_div">
+        <video src="video/1.mp4" controls="controls" id="video"></video>
+        <a href="javascript:close('video_div')" class="video_close" onclick="video_pause('video')">x</a>
+    </div>
+    <!--顶部导航栏-->
+    <nav class="nav">
+    </nav>
+    <!--页面中间大背景内容-->
+    <section class="bg">
+        <div class="bg_title"></div>
+        <a href="javascript:open('video_div')" class="bg_video" title="播放完整视频" onclick="video_play('video')"></a>
+        <div class="bg_btn">
+            <a href="main.html" class="btn_bg">
+                <div class="btn_icon_1">进入官网</div>
+            </a>
+            <a href="#" class="btn_bg">
+                <div class="btn_icon_2">泳池派对</div>
+            </a>
+            <a href="#" class="btn_bg">
+                <div class="btn_icon_3">下载游戏</div>
+            </a>
+        </div>
+    </section>
+    <footer>
+        <p class="footer_p">
+            <a href="#" class="footer_a">腾讯互动娱乐</a>
+            &nbsp;|&nbsp;
+            <a href="#" class="footer_a">服务条款</a>
+            &nbsp;|&nbsp;
+            <a href="#" class="footer_a">隐私政策</a>
+            &nbsp;|&nbsp;
+            <a href="#" class="footer_a">腾讯游戏招聘</a>
+            &nbsp;|&nbsp;
+            <a href="#" class="footer_a">腾讯游戏客服</a>
+            &nbsp;|&nbsp;
+            <a href="#" class="footer_a">游戏地图</a>
+            &nbsp;|&nbsp;
+            <a href="#" class="footer_a">成长守护平台</a>
+            &nbsp;|&nbsp;
+            <a href="#" class="footer_a">商务合作</a>
+            &nbsp;|&nbsp;
+            <a href="#" class="footer_a">网站导航</a>
+        </p>
+        <p class="footer_p">COPYRIGHT © 1998 – 2018 TENCENT. ALL RIGHTS RESERVED.</p>
+        <p>
+            <a href="#" class="footer_a">腾讯公司 版权所有</a>
+        </p>
+    </footer>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+
+</html>
