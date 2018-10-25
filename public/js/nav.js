@@ -82,5 +82,5 @@ function open1(id){
   id.setAttribute("style","display:block")
 }
 function logout(){
-  sessionStorage.clear();location.href='http://localhost:3000/main.html';
+  sessionStorage.clear();history.go(0);
 }

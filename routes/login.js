@@ -9,7 +9,6 @@ router.post("/",(req,res)=>{
   pool.query(sql,[uname,uname,uname,upwd],(err,result)=>{
     if(err) console.log(err);
     if(result.length>0){
-      console.log(result[0].nname);
       var nname=result[0].nname;
       res.send(`<script>alert('登录成功');sessionStorage.setItem("nname","${nname}");history.go(-1)</script>`)
     }else{
