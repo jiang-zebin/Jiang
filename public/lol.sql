@@ -200,6 +200,7 @@ CREATE TABLE lol_product(
   pid INT PRIMARY KEY AUTO_INCREMENT,
   pname VARCHAR(128),
   price VARCHAR(8),
+  game_currency VARCHAR(8),
   img_url VARCHAR(256),
   isSales BOOLEAN,
   price_sale VARCHAR(8)
