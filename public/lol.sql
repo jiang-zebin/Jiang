@@ -182,3 +182,25 @@ INSERT INTO lol_hero VALUES(NULL,'爆破鬼才','吉格斯','Ziggs','img/hero/Zi
 INSERT INTO lol_hero VALUES(NULL,'时光守护者','基兰','Zilean','img/hero/Zilean.png','All Support Mage');
 INSERT INTO lol_hero VALUES(NULL,'暮光星灵','佐伊','Zoe','img/hero/Zoe.png','All Support Mage');
 INSERT INTO lol_hero VALUES(NULL,'荆棘之兴','婕拉','Zyra','img/hero/Zyra.png','All Mage Support');
+
+DROP TABLE IF EXISTS lol_cart;
+CREATE TABLE lol_mini(                     #小程序用户表
+  cid INT PRIMARY KEY AUTO_INCREMENT,
+  id VARCHAR(128),
+  productId INT,
+  phone VARCHAR(16),
+  email VARCHAR(64),
+  user_name VARCHAR(32),
+  gender INT,
+  address VARCHAR(1024)
+);
+
+DROP TABLE IF EXISTS lol_product;
+CREATE TABLE lol_product(
+  pid INT PRIMARY KEY AUTO_INCREMENT,
+  pname VARCHAR(128),
+  price VARCHAR(8),
+  img_url VARCHAR(256),
+  isSales BOOLEAN,
+  price_sale VARCHAR(8)
+);
