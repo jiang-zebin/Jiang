@@ -183,11 +183,10 @@ INSERT INTO lol_hero VALUES(NULL,'时光守护者','基兰','Zilean','https://os
 INSERT INTO lol_hero VALUES(NULL,'暮光星灵','佐伊','Zoe','https://ossweb-img.qq.com/images/lol/img/champion/Zoe.png','All Support Mage');
 INSERT INTO lol_hero VALUES(NULL,'荆棘之兴','婕拉','Zyra','https://ossweb-img.qq.com/images/lol/img/champion/Zyra.png','All Mage Support');
 
-DROP TABLE IF EXISTS lol_cart;
+DROP TABLE IF EXISTS lol_mini;
 CREATE TABLE lol_mini(                     #小程序用户表
-  cid INT PRIMARY KEY AUTO_INCREMENT,
+  mid INT PRIMARY KEY AUTO_INCREMENT,
   id VARCHAR(128),
-  productId INT,
   phone VARCHAR(16),
   email VARCHAR(64),
   user_name VARCHAR(32),
@@ -196,7 +195,7 @@ CREATE TABLE lol_mini(                     #小程序用户表
 );
 
 DROP TABLE IF EXISTS lol_product;
-CREATE TABLE lol_product(
+CREATE TABLE lol_product(                   #商品列表
   pid INT PRIMARY KEY AUTO_INCREMENT,
   pname VARCHAR(128),
   price VARCHAR(8),
@@ -261,3 +260,17 @@ INSERT INTO lol_product VALUES(NULL,'星之守护者 索拉卡',7900,NULL,'https
 INSERT INTO lol_product VALUES(NULL,'驯龙女巫 婕拉',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big143004.jpg',false,3950,'skin');
 INSERT INTO lol_product VALUES(NULL,'腥红之月 基兰',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big26005.jpg',false,3450,'skin');
 INSERT INTO lol_product VALUES(NULL,'甜心宝贝 娑娜',19900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big37007.jpg',false,9950,'skin');
+
+DROP TABLE IF EXISTS lol_cart;
+CREATE TABLE lol_cart(                         #购物车表
+  cid INT PRIMARY KEY AUTO_INCREMENT,
+  id VARCHAR(128),
+  productId VARCHAR(256)
+);
+
+DROP TABLE IF EXISTS lol_buylist;
+CREATE TABLE lol_buylist(                      #订单表
+  bid INT PRIMARY KEY AUTO_INCREMENT,
+  id VARCHAR(128),
+  productId VARCHAR(256)
+);
