@@ -274,3 +274,16 @@ CREATE TABLE lol_buylist(                      #订单表
   id VARCHAR(128),
   productId VARCHAR(256)
 );
+
+DROP TABLE IF EXISTS lol_bannerlist;
+CREATE TABLE lol_bannerlist(                      #轮播图表
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  productId VARCHAR(256),
+  img_url VARCHAR(256)
+);
+
+INSERT INTO lol_bannerlist VALUES(NULL,45,'https://ossweb-img.qq.com/images/lol/web201310/skin/big39006.jpg');
+INSERT INTO lol_bannerlist VALUES(NULL,46,'https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg');
+INSERT INTO lol_bannerlist VALUES(NULL,33,'https://ossweb-img.qq.com/images/lol/web201310/skin/big74006.jpg');
+INSERT INTO lol_bannerlist VALUES(NULL,49,'https://ossweb-img.qq.com/images/lol/web201310/skin/big16007.jpg');
+INSERT INTO lol_bannerlist VALUES(NULL,40,'https://ossweb-img.qq.com/images/lol/web201310/skin/big81018.jpg');

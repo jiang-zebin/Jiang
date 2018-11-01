@@ -5,7 +5,7 @@ var router=express.Router();
 //获取用户信息
 router.get("/",(req,res)=>{
 	var id=req.query.id;
-	var sql="SELECT `cid`, `id`, `phone`, `email`, `user_name`, `gender`, `address` FROM `lol_mini` WHERE id=?";
+	var sql="SELECT `mid`, `id`, `phone`, `email`, `user_name`, `gender`, `address` FROM `lol_mini` WHERE id=?";
 	pool.query(sql,[id],(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
@@ -15,7 +15,7 @@ router.get("/",(req,res)=>{
 			pool.query(sql,[id],(err,result)=>{
 				if(err) throw err;
 				if(result.affectedRows>0){
-					var sql="SELECT `cid`, `id`, `phone`, `email`, `user_name`, `gender`, `address` FROM `lol_mini` WHERE id=?";
+					var sql="SELECT `mid`, `id`, `phone`, `email`, `user_name`, `gender`, `address` FROM `lol_mini` WHERE id=?";
 					pool.query(sql,[id],(err,result)=>{
 						if(err) throw err;
 						if(result.length>0){
@@ -48,4 +48,14 @@ router.get("/skinlist",(req,res)=>{
 	});
 });
 
+//轮播图
+router.get("/bannerlist",(req,res)=>{
+	var sql="SELECT `id`, `productId`, `img_url` FROM `lol_bannerlist`";
+	pool.query(sql,(err,result)=>{
+		if(err) throw err;
+		if(result.length>0){
+			res.send(result)
+		}
+	});
+});
 module.exports=router;
