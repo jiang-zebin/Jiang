@@ -30,7 +30,7 @@ router.get("/",(req,res)=>{
 
 //获取商品列表
 router.get("/herolist",(req,res)=>{
-	var sql="SELECT `pid`, `pname`, `price`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type` FROM `lol_product` WHERE type='hero' ";
+	var sql="SELECT `pid`, `pname`, `price`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time` FROM `lol_product` WHERE type='hero' ";
 	pool.query(sql,(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
@@ -39,8 +39,19 @@ router.get("/herolist",(req,res)=>{
 	});
 });
 router.get("/skinlist",(req,res)=>{
-	var sql="SELECT `pid`, `pname`, `price`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type` FROM `lol_product` WHERE type='skin' ";
+	var sql="SELECT `pid`, `pname`, `price`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time` FROM `lol_product` WHERE type='skin' ";
 	pool.query(sql,(err,result)=>{
+		if(err) throw err;
+		if(result.length>0){
+			res.send(result)
+		}
+	});
+});
+
+router.get("/tips",(req,res)=>{
+	var hero_type=req.query.hero_type;
+	var sql="SELECT `pid`, `pname`, `price`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time` FROM `lol_product` WHERE hero_type=? ";
+	pool.query(sql,[hero_type],(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
 			res.send(result)
@@ -50,7 +61,7 @@ router.get("/skinlist",(req,res)=>{
 
 //轮播图
 router.get("/bannerlist",(req,res)=>{
-	var sql="SELECT `id`, `productId`, `img_url` FROM `lol_bannerlist`";
+	var sql="SELECT `id`, `productId`, `img_url` ,`hero_type` FROM `lol_bannerlist`";
 	pool.query(sql,(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
@@ -58,4 +69,18 @@ router.get("/bannerlist",(req,res)=>{
 		}
 	});
 });
+
+//详情页
+router.get("/detail",(req,res)=>{
+	var pid=req.query.pid;
+	var sql="SELECT `pid`, `pname`, `price`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time` FROM `lol_product` WHERE pid=? ";
+	pool.query(sql,[pid],(err,result)=>{
+		if(err) throw err;
+		if(result.length>0){
+			res.send(result)
+		}
+	});
+});
+
+
 module.exports=router;

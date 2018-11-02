@@ -203,63 +203,65 @@ CREATE TABLE lol_product(                   #商品列表
   img_url VARCHAR(256),
   isSales BOOLEAN,
   price_sale VARCHAR(8),
-  type VARCHAR(64)
+  type VARCHAR(64),
+  hero_type  VARCHAR(64),
+  sale_time VARCHAR(32)
 );
 
-INSERT INTO lol_product VALUES(NULL,'放逐之刃 锐雯',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big92000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'疾风剑豪 亚索',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big157000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'影流之主 劫',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big238000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'暗裔剑魔 亚托克斯',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big266000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'虚空之女 卡莎',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big145000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'暴走萝莉 金克丝',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big222000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'大发明家 黑默丁格',2500,3150,'https://ossweb-img.qq.com/images/lol/web201310/skin/big74000.jpg',false,1250,'hero');
-INSERT INTO lol_product VALUES(NULL,'猩红收割者 弗拉基米尔',2500,3150,'https://ossweb-img.qq.com/images/lol/web201310/skin/big8000.jpg',false,1250,'hero');
-INSERT INTO lol_product VALUES(NULL,'迅捷斥候 提莫',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big17000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'暮光星灵 佐伊',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big142000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'发条魔灵 奥利安娜',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big61000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'暗夜猎手 薇恩',3500,4800,'https://ossweb-img.qq.com/images/lol/web201310/skin/big67000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'诡术妖姬 乐芙兰',3500,4800,'https://ossweb-img.qq.com/images/lol/web201310/skin/big7000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'探险家 伊泽瑞尔',3500,4800,'https://ossweb-img.qq.com/images/lol/web201310/skin/big81000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'离群之刺 阿卡丽',2500,3150,'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'逆羽 霞',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big498000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'幻翎 洛',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big497000.jpg',false,1250,'hero');
-INSERT INTO lol_product VALUES(NULL,'未来守护者 杰斯',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big126000.jpg',false,1250,'hero');
-INSERT INTO lol_product VALUES(NULL,'刀锋舞者 艾瑞莉娅',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'刀锋之影 泰隆',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big91000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'死亡颂唱者 卡尔萨斯',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big30000.jpg',false,2250,'hero');
-INSERT INTO lol_product VALUES(NULL,'唤潮鲛姬 娜美',3500,4800,'https://ossweb-img.qq.com/images/lol/web201310/skin/big267000.jpg',false,1750,'hero');
-INSERT INTO lol_product VALUES(NULL,'众星之子 索拉卡',1000,450,'https://ossweb-img.qq.com/images/lol/web201310/skin/big16000.jpg',false,500,'hero');
-INSERT INTO lol_product VALUES(NULL,'荆棘之兴 婕拉',3500,4800,'https://ossweb-img.qq.com/images/lol/web201310/skin/big143000.jpg',false,1750,'hero');
-INSERT INTO lol_product VALUES(NULL,'时光守护者 基兰',1000,450,'https://ossweb-img.qq.com/images/lol/web201310/skin/big26000.jpg',false,500,'hero');
-INSERT INTO lol_product VALUES(NULL,'琴瑟仙女 娑娜',2500,3150,'https://ossweb-img.qq.com/images/lol/web201310/skin/big26000.jpg',false,1250,'hero');
+INSERT INTO lol_product VALUES(NULL,'放逐之刃 锐雯',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big92000.jpg',false,2250,'hero','Fighter','2015-06-10');
+INSERT INTO lol_product VALUES(NULL,'疾风剑豪 亚索',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big157000.jpg',false,2250,'hero','Fighter','2015-11-11');
+INSERT INTO lol_product VALUES(NULL,'影流之主 劫',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big238000.jpg',false,2250,'hero','Assassin','2015-7-21');
+INSERT INTO lol_product VALUES(NULL,'暗裔剑魔 亚托克斯',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big266000.jpg',false,2250,'hero','Fighter','2015-12-31');
+INSERT INTO lol_product VALUES(NULL,'虚空之女 卡莎',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big145000.jpg',false,2250,'hero','Marksman','2018-01-19');
+INSERT INTO lol_product VALUES(NULL,'暴走萝莉 金克丝',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big222000.jpg',false,2250,'hero','Marksman','2016-02-01');
+INSERT INTO lol_product VALUES(NULL,'大发明家 黑默丁格',2500,3150,'https://ossweb-img.qq.com/images/lol/web201310/skin/big74000.jpg',false,1250,'hero','Mage','2015-05-17');
+INSERT INTO lol_product VALUES(NULL,'猩红收割者 弗拉基米尔',2500,3150,'https://ossweb-img.qq.com/images/lol/web201310/skin/big8000.jpg',false,1250,'hero','Mage','2016-02-01');
+INSERT INTO lol_product VALUES(NULL,'迅捷斥候 提莫',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big17000.jpg',false,2250,'hero','Mage','2016-03-09');
+INSERT INTO lol_product VALUES(NULL,'暮光星灵 佐伊',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big142000.jpg',false,2250,'hero','Mage','2017-11-21');
+INSERT INTO lol_product VALUES(NULL,'发条魔灵 奥利安娜',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big61000.jpg',false,2250,'hero','Mage','2015-04-01');
+INSERT INTO lol_product VALUES(NULL,'暗夜猎手 薇恩',3500,4800,'https://ossweb-img.qq.com/images/lol/web201310/skin/big67000.jpg',false,2250,'hero','Marksman','2015-04-01');
+INSERT INTO lol_product VALUES(NULL,'诡术妖姬 乐芙兰',3500,4800,'https://ossweb-img.qq.com/images/lol/web201310/skin/big7000.jpg',false,1750,'hero','Assassin','2015-04-01');
+INSERT INTO lol_product VALUES(NULL,'探险家 伊泽瑞尔',3500,4800,'https://ossweb-img.qq.com/images/lol/web201310/skin/big81000.jpg',false,1750,'hero','Marksman','2015-04-01');
+INSERT INTO lol_product VALUES(NULL,'离群之刺 阿卡丽',2500,3150,'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',false,1250,'hero','Assassin','2018-06-22');
+INSERT INTO lol_product VALUES(NULL,'逆羽 霞',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big498000.jpg',false,2250,'hero','Marksman','2016-02-01');
+INSERT INTO lol_product VALUES(NULL,'幻翎 洛',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big497000.jpg',false,2250,'hero','Support','2016-02-01');
+INSERT INTO lol_product VALUES(NULL,'未来守护者 杰斯',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big126000.jpg',false,2250,'hero','Fighter','2016-3-08');
+INSERT INTO lol_product VALUES(NULL,'刀锋舞者 艾瑞莉娅',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg',false,2250,'hero','Fighter','2016-3-08');
+INSERT INTO lol_product VALUES(NULL,'刀锋之影 泰隆',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big91000.jpg',false,2250,'hero','Assassin','2016-3-08');
+INSERT INTO lol_product VALUES(NULL,'死亡颂唱者 卡尔萨斯',4500,6300,'https://ossweb-img.qq.com/images/lol/web201310/skin/big30000.jpg',false,2250,'hero','Mage','2016-3-08');
+INSERT INTO lol_product VALUES(NULL,'唤潮鲛姬 娜美',3500,4800,'https://ossweb-img.qq.com/images/lol/web201310/skin/big267000.jpg',false,1750,'hero','Support','2016-3-08');
+INSERT INTO lol_product VALUES(NULL,'众星之子 索拉卡',1000,450,'https://ossweb-img.qq.com/images/lol/web201310/skin/big16000.jpg',false,500,'hero','Support','2015-04-01');
+INSERT INTO lol_product VALUES(NULL,'荆棘之兴 婕拉',3500,4800,'https://ossweb-img.qq.com/images/lol/web201310/skin/big143000.jpg',false,1750,'hero','Mage','2015-10-01');
+INSERT INTO lol_product VALUES(NULL,'时光守护者 基兰',1000,450,'https://ossweb-img.qq.com/images/lol/web201310/skin/big26000.jpg',false,500,'hero','Support','2015-04-01');
+INSERT INTO lol_product VALUES(NULL,'琴瑟仙女 娑娜',2500,3150,'https://ossweb-img.qq.com/images/lol/web201310/skin/big37000.jpg',false,1250,'hero','Support','2015-04-01');
 
 
-INSERT INTO lol_product VALUES(NULL,'兔女郎 锐雯',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big92003.jpg',false,4950,'skin');
-INSERT INTO lol_product VALUES(NULL,'西部牛仔 亚索',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big157001.jpg',false,3450,'skin');
-INSERT INTO lol_product VALUES(NULL,'冠军之隐 劫',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big238010.jpg',false,3450,'skin');
-INSERT INTO lol_product VALUES(NULL,'霸天剑魔 亚托克斯',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big266002.jpg',false,3450,'skin');
-INSERT INTO lol_product VALUES(NULL,'弹幕天使 卡莎',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big145001.jpg',false,3450,'skin');
-INSERT INTO lol_product VALUES(NULL,'圣诞捣蛋鬼 金克丝',19900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big222012.jpg',false,9950,'skin');
-INSERT INTO lol_product VALUES(NULL,'驯龙学者 黑默丁格',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big74006.jpg',false,4950,'skin');
-INSERT INTO lol_product VALUES(NULL,'黑潮 弗拉基米尔',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big8008.jpg',false,3950,'skin');
-INSERT INTO lol_product VALUES(NULL,'小蜜蜂 提莫',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big17018.jpg',false,3950,'skin');
-INSERT INTO lol_product VALUES(NULL,'泳池派对 佐伊',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big142002.jpg',false,4950,'skin');
-INSERT INTO lol_product VALUES(NULL,'死兆星 奥莉安娜',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big61007.jpg',false,3950,'skin');
-INSERT INTO lol_product VALUES(NULL,'源计划：净化 薇恩',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big67011.jpg',false,4950,'skin');
-INSERT INTO lol_product VALUES(NULL,'长者之森 乐芙兰',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big7005.jpg',false,3950,'skin');
-INSERT INTO lol_product VALUES(NULL,'星之守护者 伊泽瑞尔',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big81018.jpg',false,3950,'skin');
-INSERT INTO lol_product VALUES(NULL,'实习护士 阿卡丽',3900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big92003.jpg',false,1950,'skin');
-INSERT INTO lol_product VALUES(NULL,'甜心之羽 霞',19900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big498002.jpg',false,9950,'skin');
-INSERT INTO lol_product VALUES(NULL,'甜心之翎 洛',19900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big497002.jpg',false,9950,'skin');
-INSERT INTO lol_product VALUES(NULL,'蔷薇绅士 杰斯',12900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big126002.jpg',false,6450,'skin');
-INSERT INTO lol_product VALUES(NULL,'玉剑传说 舞剑仙',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big39006.jpg',false,4950,'skin');
-INSERT INTO lol_product VALUES(NULL,'玉剑传说 无影',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg',false,4950,'skin');
-INSERT INTO lol_product VALUES(NULL,'卡尔萨斯·祸害之光',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big30009.jpg',false,3450,'skin');
-INSERT INTO lol_product VALUES(NULL,'SKT T1 娜美',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big267008.jpg',false,3950,'skin');
-INSERT INTO lol_product VALUES(NULL,'星之守护者 索拉卡',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big16007.jpg',false,3950,'skin');
-INSERT INTO lol_product VALUES(NULL,'驯龙女巫 婕拉',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big143004.jpg',false,3950,'skin');
-INSERT INTO lol_product VALUES(NULL,'腥红之月 基兰',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big26005.jpg',false,3450,'skin');
-INSERT INTO lol_product VALUES(NULL,'甜心宝贝 娑娜',19900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big37007.jpg',false,9950,'skin');
+INSERT INTO lol_product VALUES(NULL,'兔女郎 锐雯',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big92003.jpg',false,4950,'skin','Fighter','2015-08-01');
+INSERT INTO lol_product VALUES(NULL,'西部牛仔 亚索',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big157001.jpg',false,3450,'skin','Fighter','2015-11-11');
+INSERT INTO lol_product VALUES(NULL,'冠军之隐 劫',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big238010.jpg',false,3450,'skin','Assassin','2016-05-28');
+INSERT INTO lol_product VALUES(NULL,'霸天剑魔 亚托克斯',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big266002.jpg',false,3450,'skin','Fighter','2015-09-01');
+INSERT INTO lol_product VALUES(NULL,'弹幕天使 卡莎',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big145001.jpg',false,3450,'skin','Marksman','2018-01-19');
+INSERT INTO lol_product VALUES(NULL,'圣诞捣蛋鬼 金克丝',19900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big222012.jpg',false,9950,'skin','Marksman','2017-12-20');
+INSERT INTO lol_product VALUES(NULL,'驯龙学者 黑默丁格',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big74006.jpg',false,4950,'skin','Mage','2018-10-18');
+INSERT INTO lol_product VALUES(NULL,'黑潮 弗拉基米尔',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big8008.jpg',false,3950,'skin','Mage','2018-05-11');
+INSERT INTO lol_product VALUES(NULL,'小蜜蜂 提莫',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big17018.jpg',false,3950,'skin','Mage','2018-03-05');
+INSERT INTO lol_product VALUES(NULL,'泳池派对 佐伊',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big142002.jpg',false,4950,'skin','Mage','2018-07-18');
+INSERT INTO lol_product VALUES(NULL,'死兆星 奥莉安娜',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big61007.jpg',false,3950,'skin','Mage','2017-01-08');
+INSERT INTO lol_product VALUES(NULL,'源计划：净化 薇恩',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big67011.jpg',false,4950,'skin','Marksman','2017-07-30');
+INSERT INTO lol_product VALUES(NULL,'长者之森 乐芙兰',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big7005.jpg',false,3950,'skin','Assassin','2016-7-19');
+INSERT INTO lol_product VALUES(NULL,'星之守护者 伊泽瑞尔',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big81018.jpg',false,3950,'skin','Marksman','2017-9-26');
+INSERT INTO lol_product VALUES(NULL,'实习护士 阿卡丽',3900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big92003.jpg',false,1950,'skin','Assassin','2015-06-08');
+INSERT INTO lol_product VALUES(NULL,'甜心之羽 霞',19900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big498002.jpg',false,9950,'skin','Marksman','2018-02-14');
+INSERT INTO lol_product VALUES(NULL,'甜心之翎 洛',19900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big497002.jpg',false,9950,'skin','Support','2018-02-14');
+INSERT INTO lol_product VALUES(NULL,'蔷薇绅士 杰斯',12900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big126002.jpg',false,6450,'skin','Fighter','2015-12-18');
+INSERT INTO lol_product VALUES(NULL,'玉剑传说 舞剑仙',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big39006.jpg',false,4950,'skin','Fighter','2018-09-28');
+INSERT INTO lol_product VALUES(NULL,'玉剑传说 无影',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg',false,4950,'skin','Assassin','2018-09-28');
+INSERT INTO lol_product VALUES(NULL,'卡尔萨斯·祸害之光',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big30009.jpg',false,3450,'skin','Mage','2018-04-20');
+INSERT INTO lol_product VALUES(NULL,'SKT T1 娜美',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big267008.jpg',false,3950,'skin','Support','2017-05-08');
+INSERT INTO lol_product VALUES(NULL,'星之守护者 索拉卡',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big16007.jpg',false,3950,'skin','Support','2017-11-15');
+INSERT INTO lol_product VALUES(NULL,'驯龙女巫 婕拉',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big143004.jpg',false,3950,'skin','Mage','2017-10-08');
+INSERT INTO lol_product VALUES(NULL,'腥红之月 基兰',6900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big26005.jpg',false,3450,'skin','Support','2016-11-01');
+INSERT INTO lol_product VALUES(NULL,'甜心宝贝 娑娜',19900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big37007.jpg',false,9950,'skin','Support','2017-02-14');
 
 DROP TABLE IF EXISTS lol_cart;
 CREATE TABLE lol_cart(                         #购物车表
@@ -279,11 +281,12 @@ DROP TABLE IF EXISTS lol_bannerlist;
 CREATE TABLE lol_bannerlist(                      #轮播图表
   id INT PRIMARY KEY AUTO_INCREMENT,
   productId VARCHAR(256),
-  img_url VARCHAR(256)
+  img_url VARCHAR(256),
+  hero_type VARCHAR(64)
 );
 
-INSERT INTO lol_bannerlist VALUES(NULL,45,'https://ossweb-img.qq.com/images/lol/web201310/skin/big39006.jpg');
-INSERT INTO lol_bannerlist VALUES(NULL,46,'https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg');
-INSERT INTO lol_bannerlist VALUES(NULL,33,'https://ossweb-img.qq.com/images/lol/web201310/skin/big74006.jpg');
-INSERT INTO lol_bannerlist VALUES(NULL,49,'https://ossweb-img.qq.com/images/lol/web201310/skin/big16007.jpg');
-INSERT INTO lol_bannerlist VALUES(NULL,40,'https://ossweb-img.qq.com/images/lol/web201310/skin/big81018.jpg');
+INSERT INTO lol_bannerlist VALUES(NULL,45,'https://ossweb-img.qq.com/images/lol/web201310/skin/big39006.jpg','Fighter');
+INSERT INTO lol_bannerlist VALUES(NULL,46,'https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg','Assassin');
+INSERT INTO lol_bannerlist VALUES(NULL,33,'https://ossweb-img.qq.com/images/lol/web201310/skin/big74006.jpg','Mage');
+INSERT INTO lol_bannerlist VALUES(NULL,49,'https://ossweb-img.qq.com/images/lol/web201310/skin/big16007.jpg','Support');
+INSERT INTO lol_bannerlist VALUES(NULL,40,'https://ossweb-img.qq.com/images/lol/web201310/skin/big81018.jpg','Marksman');
