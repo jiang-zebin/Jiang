@@ -250,7 +250,7 @@ INSERT INTO lol_product VALUES(NULL,'死兆星 奥莉安娜',7900,NULL,'https://
 INSERT INTO lol_product VALUES(NULL,'源计划：净化 薇恩',9900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big67011.jpg',false,4950,'skin','Marksman','2017-07-30');
 INSERT INTO lol_product VALUES(NULL,'长者之森 乐芙兰',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big7005.jpg',false,3950,'skin','Assassin','2016-7-19');
 INSERT INTO lol_product VALUES(NULL,'星之守护者 伊泽瑞尔',7900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big81018.jpg',false,3950,'skin','Marksman','2017-9-26');
-INSERT INTO lol_product VALUES(NULL,'实习护士 阿卡丽',3900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big92003.jpg',false,1950,'skin','Assassin','2015-06-08');
+INSERT INTO lol_product VALUES(NULL,'实习护士 阿卡丽',3900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big84004.jpg',false,1950,'skin','Assassin','2015-06-08');
 INSERT INTO lol_product VALUES(NULL,'甜心之羽 霞',19900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big498002.jpg',false,9950,'skin','Marksman','2018-02-14');
 INSERT INTO lol_product VALUES(NULL,'甜心之翎 洛',19900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big497002.jpg',false,9950,'skin','Support','2018-02-14');
 INSERT INTO lol_product VALUES(NULL,'蔷薇绅士 杰斯',12900,NULL,'https://ossweb-img.qq.com/images/lol/web201310/skin/big126002.jpg',false,6450,'skin','Fighter','2015-12-18');
