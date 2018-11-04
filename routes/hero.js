@@ -3,7 +3,14 @@ const pool=require("../pool");
 const router=express.Router();
 router.get("/type",(req,res)=>{
   var hero_type="%"+req.query.hero_type+"%";
-  var sql="SELECT `hid`, `hname`, `real_name_cn`, `real_name_en`, `hero_avatar`, `hero_type` FROM `lol_hero` WHERE hero_type LIKE ?";
+  var price=req.query.price;
+  if(price=="up"){
+	var sql="SELECT `hid`, `hname`, `real_name_cn`, `real_name_en`, `hero_avatar`, `hero_type`, `price` FROM `lol_hero` WHERE hero_type LIKE ? ORDER BY `price` ASC";
+  }else if(price=="down"){
+	var sql="SELECT `hid`, `hname`, `real_name_cn`, `real_name_en`, `hero_avatar`, `hero_type`, `price` FROM `lol_hero` WHERE hero_type LIKE ? ORDER BY `price` DESC";
+  }else{
+	var sql="SELECT `hid`, `hname`, `real_name_cn`, `real_name_en`, `hero_avatar`, `hero_type`, `price` FROM `lol_hero` WHERE hero_type LIKE ?";
+  }
   pool.query(sql,[hero_type],(err,result)=>{
     res.send(result);
   })
