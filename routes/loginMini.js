@@ -30,7 +30,7 @@ router.get("/",(req,res)=>{
 
 //获取商品列表
 router.get("/herolist",(req,res)=>{
-	var sql="SELECT `pid`, `pname`, `price`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time` FROM `lol_product` WHERE type='hero' ";
+	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time`, `checked`  FROM `lol_product` WHERE type='hero' ";
 	pool.query(sql,(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
@@ -39,7 +39,7 @@ router.get("/herolist",(req,res)=>{
 	});
 });
 router.get("/skinlist",(req,res)=>{
-	var sql="SELECT `pid`, `pname`, `price`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time` FROM `lol_product` WHERE type='skin' ";
+	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time`, `checked`  FROM `lol_product` WHERE type='skin' ";
 	pool.query(sql,(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
@@ -50,7 +50,7 @@ router.get("/skinlist",(req,res)=>{
 
 router.get("/tips",(req,res)=>{
 	var hero_type=req.query.hero_type;
-	var sql="SELECT `pid`, `pname`, `price`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time` FROM `lol_product` WHERE hero_type=? ";
+	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time`, `checked`  FROM `lol_product` WHERE hero_type=? ";
 	pool.query(sql,[hero_type],(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
@@ -73,7 +73,7 @@ router.get("/bannerlist",(req,res)=>{
 //详情页
 router.get("/detail",(req,res)=>{
 	var pid=req.query.pid;
-	var sql="SELECT `pid`, `pname`, `price`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time` FROM `lol_product` WHERE pid=? ";
+	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time`, `checked`  FROM `lol_product` WHERE pid=? ";
 	pool.query(sql,[pid],(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
@@ -98,7 +98,26 @@ router.get("/addcart",(req,res)=>{
 //获取购物车
 router.get("/getcart",(req,res)=>{
 	var id = req.query.id;
-
+	var sql = "SELECT productId FROM lol_cart WHERE id=?"
+	pool.query(sql,id,(err,result)=>{
+		if(err) throw err;
+		if(result.length>0){
+			var sql = "SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time`, `checked`  FROM `lol_product` WHERE ";
+			for(var i = 0;i<result.length;i++){
+				if(i==0){
+					sql+=" pid="+result[i].productId
+				}else{
+					sql+=" or pid="+result[i].productId
+				}
+			}
+			pool.query(sql,(err,result)=>{
+				if(err) throw err;
+				if(result.length>0){
+					res.send(result)
+				}
+			})
+		}
+	})
 })
 
 module.exports=router;
