@@ -268,7 +268,7 @@ DROP TABLE IF EXISTS lol_cart;
 CREATE TABLE lol_cart(                         #购物车表
   cid INT PRIMARY KEY AUTO_INCREMENT,
   id VARCHAR(128),
-  productId VARCHAR(256)
+  productId INT
 );
 
 DROP TABLE IF EXISTS lol_buylist;

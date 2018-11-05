@@ -82,5 +82,17 @@ router.get("/detail",(req,res)=>{
 	});
 });
 
+//加入购物车
+router.get("/addcart",(req,res)=>{
+	var productId=req.query.pid;
+	var id=req.query.id;
+	var sql="INSERT INTO `lol_cart`( `id`, `productId`) VALUES (?,?)";
+	pool.query(sql,[id,productId],(err,result)=>{
+		if(err) throw err;
+		if(result.affectedRows>0){
+			res.send("add success")
+		}
+	})
+})
 
 module.exports=router;

@@ -5,9 +5,9 @@ router.get("/type",(req,res)=>{
   var hero_type="%"+req.query.hero_type+"%";
   var price=req.query.price;
   if(price=="up"){
-	var sql="SELECT `hid`, `hname`, `real_name_cn`, `real_name_en`, `hero_avatar`, `hero_type`, `price` FROM `lol_hero` WHERE hero_type LIKE ? ORDER BY `price` ASC";
+	var sql="SELECT `hid`, `hname`, `real_name_cn`, `real_name_en`, `hero_avatar`, `hero_type`, `price` FROM `lol_hero` WHERE hero_type LIKE ? ORDER BY `price` ASC , `real_name_en` ASC";
   }else if(price=="down"){
-	var sql="SELECT `hid`, `hname`, `real_name_cn`, `real_name_en`, `hero_avatar`, `hero_type`, `price` FROM `lol_hero` WHERE hero_type LIKE ? ORDER BY `price` DESC";
+	var sql="SELECT `hid`, `hname`, `real_name_cn`, `real_name_en`, `hero_avatar`, `hero_type`, `price` FROM `lol_hero` WHERE hero_type LIKE ? ORDER BY `price` DESC , `real_name_en` ASC";
   }else{
 	var sql="SELECT `hid`, `hname`, `real_name_cn`, `real_name_en`, `hero_avatar`, `hero_type`, `price` FROM `lol_hero` WHERE hero_type LIKE ?";
   }
