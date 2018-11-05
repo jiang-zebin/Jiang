@@ -95,4 +95,10 @@ router.get("/addcart",(req,res)=>{
 	})
 })
 
+//获取购物车
+router.get("/getcart",(req,res)=>{
+	var id = req.query.id;
+
+})
+
 module.exports=router;
