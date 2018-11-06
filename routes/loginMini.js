@@ -30,7 +30,7 @@ router.get("/",(req,res)=>{
 
 //获取商品列表
 router.get("/herolist",(req,res)=>{
-	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time`, `checked`  FROM `lol_product` WHERE type='hero' ";
+	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `price_sale`, `type`, `hero_type`, `sale_time`  FROM `lol_product` WHERE type='hero' ";
 	pool.query(sql,(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
@@ -39,7 +39,7 @@ router.get("/herolist",(req,res)=>{
 	});
 });
 router.get("/skinlist",(req,res)=>{
-	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time`, `checked`  FROM `lol_product` WHERE type='skin' ";
+	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `price_sale`, `type`, `hero_type`, `sale_time`  FROM `lol_product` WHERE type='skin' ";
 	pool.query(sql,(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
@@ -50,7 +50,7 @@ router.get("/skinlist",(req,res)=>{
 
 router.get("/tips",(req,res)=>{
 	var hero_type=req.query.hero_type;
-	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time`, `checked`  FROM `lol_product` WHERE hero_type=? ";
+	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`,  `price_sale`, `type`, `hero_type`, `sale_time`  FROM `lol_product` WHERE hero_type=? ";
 	pool.query(sql,[hero_type],(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
@@ -58,6 +58,18 @@ router.get("/tips",(req,res)=>{
 		}
 	});
 });
+
+//查询符合关键字商品
+router.get("/pname",(req,res)=>{
+	var pname="%"+req.query.pname+"%";
+	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`,  `price_sale`, `type`, `hero_type`, `sale_time`  FROM `lol_product` WHERE pname LIKE ?";
+	pool.query(sql,pname,(err,result)=>{
+		if(err) throw err;
+		if(result.length>0){
+			res.send(result)
+		}
+	})
+})
 
 //轮播图
 router.get("/bannerlist",(req,res)=>{
@@ -73,7 +85,7 @@ router.get("/bannerlist",(req,res)=>{
 //详情页
 router.get("/detail",(req,res)=>{
 	var pid=req.query.pid;
-	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time`, `checked`  FROM `lol_product` WHERE pid=? ";
+	var sql="SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `price_sale`, `type`, `hero_type`, `sale_time`  FROM `lol_product` WHERE pid=? ";
 	pool.query(sql,[pid],(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
@@ -102,12 +114,51 @@ router.get("/getcart",(req,res)=>{
 	pool.query(sql,id,(err,result)=>{
 		if(err) throw err;
 		if(result.length>0){
-			var sql = "SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `isSales`, `price_sale`, `type`, `hero_type`, `sale_time`, `checked`  FROM `lol_product` WHERE ";
+			var sql = "SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `price_sale`, `type`, `hero_type`, `sale_time`  FROM `lol_product` WHERE ";
 			for(var i = 0;i<result.length;i++){
 				if(i==0){
 					sql+=" pid="+result[i].productId
 				}else{
 					sql+=" or pid="+result[i].productId
+				}
+			}
+			pool.query(sql,(err,result)=>{
+				if(err) throw err;
+				if(result.length>0){
+					res.send(result)
+				}
+			})
+		}
+	})
+})
+
+//删除购物车
+router.get("/delete",(req,res)=>{
+	var pid = req.query.pid;
+	var sql = "DELETE FROM `lol_cart` WHERE productId=?";
+	pool.query(sql,pid,(err,result)=>{
+		if(err) throw err;
+		if(result.affectedRows>0){
+			res.send({code:200,message:"delete success"});
+		}
+	})
+})
+
+//提交订单
+router.get("/addbuylist",(req,res)=>{
+	var id = req.query.id;
+	var pids = req.query.pids;
+	var sql = "INSERT INTO `lol_buylist`(`id`, `productId`) VALUES (?,?)";
+	pool.query(sql,[id,pids],(err,result)=>{
+		if(err) throw err;
+		if(result.affectedRows>0){
+			var sql = "SELECT `pid`, `pname`, `price`, `rmb`, `game_currency`, `img_url`, `price_sale`, `type`, `hero_type`, `sale_time`  FROM `lol_product` WHERE ";
+			var pidList = pids.split(" ");
+			for(var i = 0;i<pidList.length;i++){
+				if(i==0){
+					sql+=" pid="+pidList[i]
+				}else{
+					sql+=" or pid="+pidList[i]
 				}
 			}
 			pool.query(sql,(err,result)=>{
