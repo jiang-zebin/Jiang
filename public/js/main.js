@@ -1,6 +1,7 @@
 //大图切换
-window.onmousewheel=function(){
-  if(scrollY>100){
+window.onscroll=function(){
+  var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+  if(scrollTop>0){
     var ver=document.getElementsByClassName("ver")[0];
     var btn=document.getElementsByClassName("big_btn")[0];
     ver.style.height="350px";
