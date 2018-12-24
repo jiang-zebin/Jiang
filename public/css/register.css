@@ -3,6 +3,12 @@ body{
   margin:0;
   background:#000;
 }
+.register-container{
+  position: relative;
+  width:1280px;
+  height:auto;
+  margin:0 auto;
+}
 video{
   width:1085px;
 }
