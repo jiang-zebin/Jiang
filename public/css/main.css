@@ -8,7 +8,7 @@ body,ul,li,p,h5{
   background-image:url(../img/mian/pic-big-v29.jpg);
   background-position:center center;
   position: relative;
-  transition:all .5s;
+  transition:all .8s;
 }
 .ver::before{
   display:table;
